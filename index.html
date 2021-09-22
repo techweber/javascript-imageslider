@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Simple JavaScript Slider</title>
+	</head>
+	<body>
+		<div>
+			<img src="images/slide1.jpg" id="current_slide_image" style="width: 100%;" />
+		</div>
+
+		<script>
+
+			var slider_images = ["images/slide1.jpg","images/slide2.jpg","images/slide3.jpg","images/slide4.jpg"];
+
+			var current_slide_index = 0;
+
+			var total_images = slider_images.length - 1 ;
+
+			var change_time = 2000; /// milliseconds
+
+			setInterval( function(){
+
+				document.getElementById("current_slide_image").setAttribute("src",slider_images[current_slide_index]);
+				current_slide_index++; // current_slilde_inex = current_slide_index + 1;
+				if(current_slide_index >= total_images){
+					current_slide_index = 0;
+				}
+			}, change_time);
+
+		</script>
+
+
+	</body>
+</html>
